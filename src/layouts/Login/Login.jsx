@@ -19,12 +19,12 @@ import "../../assets/css/login.css";
 class Login extends Component {
   render() {
     return (
-      <div className="logina">
-        <Row>
-          <Col xs="12">
+      <div className="login">
+        <Col>
+          <Col xs="12" style={{width: "30%"}}>
             <Card>
               <CardHeader>
-                <h5 className="title">Login</h5>
+                <h5 className="title" style={{textAlign: "center"}}>Login</h5>
               </CardHeader>
               <CardBody>
                 <Form>
@@ -38,7 +38,7 @@ class Login extends Component {
                   <Row>
                     <Col xs="12">
                       <FormGroup>
-                        <Input placeholder="Email" type="text" />
+                        <Input placeholder="Password" type="text" />
                       </FormGroup>
                     </Col>
                   </Row>
@@ -47,7 +47,7 @@ class Login extends Component {
               <CardFooter></CardFooter>
             </Card>
           </Col>
-        </Row>
+        </Col>
       </div>
     );
   }
