@@ -45,36 +45,36 @@ class Tables extends React.Component {
                       <tr>
                         <th>Paciente</th>
                         <th>Endereço</th>
-                        <th>data</th>
+                        <th style={{width:'10%'}}>data</th>
                         <th className="text-center">Valor</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td className="text-center">$36,738</td>
+                        <td>Lauro Milagres</td>
+                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
+                        <td>16/10/2019</td>
+                        <td className="text-center">R$36,78</td>
                       </tr>
                       <tr>
-                        <td>Minerva Hooper</td>
-                        <td>Curaçao</td>
-                        <td>Sinaai-Waas</td>
-                        <td className="text-center">$23,789</td>
+                        <td>Gustavo Kotarsky</td>
+                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
+                        <td>16/10/2019</td>
+                        <td className="text-center">R$23,89</td>
                       </tr>
                       <tr>
-                        <td>Sage Rodriguez</td>
-                        <td>Netherlands</td>
-                        <td>Baileux</td>
-                        <td className="text-center">$56,142</td>
+                        <td>Yuri Cancela</td>
+                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
+                        <td>16/10/2019</td>
+                        <td className="text-center">R$56,42</td>
                       </tr>
                       <tr>
-                        <td>Philip Chaney</td>
-                        <td>Korea, South</td>
-                        <td>Overland Park</td>
-                        <td className="text-center">$38,735</td>
+                        <td>Bernardo Victor</td>
+                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
+                        <td>16/10/2019</td>
+                        <td className="text-center">R$38,75</td>
                       </tr>
-                      <tr>
+                      {/*<tr>
                         <td>Doris Greene</td>
                         <td>Malawi</td>
                         <td>Feldkirchen in Kärnten</td>
@@ -85,12 +85,12 @@ class Tables extends React.Component {
                         <td>Chile</td>
                         <td>Gloucester</td>
                         <td className="text-center">$78,615</td>
-                      </tr>
+                      </tr>*/}
                       <tr>
-                        <td>Jon Porter</td>
-                        <td>Portugal</td>
-                        <td>Gloucester</td>
-                        <td className="text-center">$98,615</td>
+                        <td>Daniel</td>
+                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
+                        <td>16/10/2019</td>
+                        <td className="text-center">R$98,65</td>
                       </tr>
                     </tbody>
                   </Table>
@@ -108,36 +108,36 @@ class Tables extends React.Component {
                       <tr>
                         <th>Paciente</th>
                         <th>Endereço</th>
-                        <th>Data</th>
+                        <th style={{width:'10%'}}>Data</th>
                         <th className="text-center">Valor</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td className="text-center">$36,738</td>
+                        <td>Yuri Cancela</td>
+                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
+                        <td>16/10/2019</td>
+                        <td className="text-center">R$36,73</td>
                       </tr>
                       <tr>
-                        <td>Minerva Hooper</td>
-                        <td>Curaçao</td>
+                        <td>Lauro Milagres</td>
+                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
                         <td>Sinaai-Waas</td>
-                        <td className="text-center">$23,789</td>
+                        <td className="text-center">R$23,79</td>
                       </tr>
                       <tr>
-                        <td>Sage Rodriguez</td>
-                        <td>Netherlands</td>
-                        <td>Baileux</td>
-                        <td className="text-center">$56,142</td>
+                        <td>Bernardo Victor</td>
+                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
+                        <td>16/10/2019</td>
+                        <td className="text-center">R$56,42</td>
                       </tr>
                       <tr>
-                        <td>Philip Chaney</td>
-                        <td>Korea, South</td>
-                        <td>Overland Park</td>
-                        <td className="text-center">$38,735</td>
+                        <td>Gustavo Kotarsky</td>
+                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
+                        <td>16/10/2019</td>
+                        <td className="text-center">R$38,35</td>
                       </tr>
-                      <tr>
+                      {/*<tr>
                         <td>Doris Greene</td>
                         <td>Malawi</td>
                         <td>Feldkirchen in Kärnten</td>
@@ -148,12 +148,12 @@ class Tables extends React.Component {
                         <td>Chile</td>
                         <td>Gloucester</td>
                         <td className="text-center">$78,615</td>
-                      </tr>
+                      </tr>*/}
                       <tr>
-                        <td>Jon Porter</td>
-                        <td>Portugal</td>
-                        <td>Gloucester</td>
-                        <td className="text-center">$98,615</td>
+                        <td>Daniel Professor</td>
+                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
+                        <td>16/10/2019</td>
+                        <td className="text-center">R$98,60</td>
                       </tr>
                     </tbody>
                   </Table>

@@ -41,28 +41,25 @@ class UserProfile extends React.Component {
             <Col md="12">
               <Card>
                 <CardHeader>
-                  <h5 className="title">Edit Profile</h5>
+                  <h5 className="title">Cadastrar Paciente</h5>
                 </CardHeader>
                 <CardBody>
                   <Form>
                     <Row>
                       <Col className="pr-md-1" md="5">
                         <FormGroup>
-                          <label>Company (disabled)</label>
-                          <Input
-                            defaultValue="Creative Code Inc."
-                            disabled
-                            placeholder="Company"
-                            type="text"
-                          />
-                        </FormGroup>
+                            <label>Nome completo</label>
+                            <Input
+                              placeholder="nome"
+                              type="text"
+                            />
+                          </FormGroup>
                       </Col>
                       <Col className="px-md-1" md="3">
                         <FormGroup>
-                          <label>Username</label>
+                          <label>CPF</label>
                           <Input
-                            defaultValue="michael23"
-                            placeholder="Username"
+                            placeholder="000.000.000-00"
                             type="text"
                           />
                         </FormGroup>
@@ -70,16 +67,16 @@ class UserProfile extends React.Component {
                       <Col className="pl-md-1" md="4">
                         <FormGroup>
                           <label htmlFor="exampleInputEmail1">
-                            Email address
+                            Email
                           </label>
-                          <Input placeholder="mike@email.com" type="email" />
+                          <Input placeholder="exemplo@email.com" type="email" />
                         </FormGroup>
                       </Col>
                     </Row>
-                    <Row>
+                    {/*<Row>
                       <Col className="pr-md-1" md="6">
                         <FormGroup>
-                          <label>First Name</label>
+                          <label>Nome completo</label>
                           <Input
                             defaultValue="Mike"
                             placeholder="Company"
@@ -89,7 +86,7 @@ class UserProfile extends React.Component {
                       </Col>
                       <Col className="pl-md-1" md="6">
                         <FormGroup>
-                          <label>Last Name</label>
+                          <label>Email</label>
                           <Input
                             defaultValue="Andrew"
                             placeholder="Last Name"
@@ -97,14 +94,13 @@ class UserProfile extends React.Component {
                           />
                         </FormGroup>
                       </Col>
-                    </Row>
+                    </Row>*/}
                     <Row>
                       <Col md="12">
                         <FormGroup>
-                          <label>Address</label>
+                          <label>Endereço</label>
                           <Input
-                            defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                            placeholder="Home Address"
+                            placeholder="Ex.: R. Dom José Gaspar, 290 - Coração Eucarístico, Belo Horizonte - MG"
                             type="text"
                           />
                         </FormGroup>
@@ -113,40 +109,39 @@ class UserProfile extends React.Component {
                     <Row>
                       <Col className="pr-md-1" md="4">
                         <FormGroup>
-                          <label>City</label>
+                          <label>Cidade</label>
                           <Input
-                            defaultValue="Mike"
-                            placeholder="City"
+                            placeholder="Ex.: Belo Horizonte"
                             type="text"
                           />
                         </FormGroup>
                       </Col>
                       <Col className="px-md-1" md="4">
                         <FormGroup>
-                          <label>Country</label>
+                          <label>País</label>
                           <Input
-                            defaultValue="Andrew"
-                            placeholder="Country"
+                            placeholder="Ex.: Brasil"
                             type="text"
                           />
                         </FormGroup>
                       </Col>
                       <Col className="pl-md-1" md="4">
-                        <FormGroup>
-                          <label>Postal Code</label>
-                          <Input placeholder="ZIP Code" type="number" />
+                      <FormGroup>
+                          <label>CEP</label>
+                          <Input
+                            placeholder="Ex.: 30535-901"
+                            type="text"
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
                     <Row>
                       <Col md="8">
                         <FormGroup>
-                          <label>About Me</label>
+                          <label>Descrição do Paciente</label>
                           <Input
                             cols="80"
-                            defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in
-                            that two seat Lambo."
-                            placeholder="Here can be your description"
+                            placeholder="Ex.: O paciente possui fragilidade ao tomar sorvete"
                             rows="4"
                             type="textarea"
                           />
@@ -157,7 +152,7 @@ class UserProfile extends React.Component {
                 </CardBody>
                 <CardFooter>
                   <Button className="btn-fill" color="primary" type="submit">
-                    Save
+                    Salvar
                   </Button>
                 </CardFooter>
               </Card>
