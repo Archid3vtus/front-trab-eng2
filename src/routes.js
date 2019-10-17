@@ -39,7 +39,7 @@ var routes = [
   },*/
   {
     path: "/user-profile",
-    name: "User Profile",
+    name: "Cadastro de Pacientes",
     rtlName: "ملف تعريفي للمستخدم",
     icon: "tim-icons icon-single-02",
     component: UserProfile,
@@ -47,7 +47,7 @@ var routes = [
   },
   {
     path: "/tables",
-    name: "Table List",
+    name: "Agendamentos",
     rtlName: "قائمة الجدول",
     icon: "tim-icons icon-puzzle-10",
     component: TableList,

@@ -37,16 +37,16 @@ class Tables extends React.Component {
             <Col md="12">
               <Card>
                 <CardHeader>
-                  <CardTitle tag="h4">Simple Table</CardTitle>
+                  <CardTitle tag="h4">Agendamento de limpeza</CardTitle>
                 </CardHeader>
                 <CardBody>
                   <Table className="tablesorter" responsive>
                     <thead className="text-primary">
                       <tr>
-                        <th>Name</th>
-                        <th>Country</th>
-                        <th>City</th>
-                        <th className="text-center">Salary</th>
+                        <th>Paciente</th>
+                        <th>Endereço</th>
+                        <th>data</th>
+                        <th className="text-center">Valor</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -100,17 +100,16 @@ class Tables extends React.Component {
             <Col md="12">
               <Card className="card-plain">
                 <CardHeader>
-                  <CardTitle tag="h4">Table on Plain Background</CardTitle>
-                  <p className="category">Here is a subtitle for this table</p>
+                  <CardTitle tag="h4">Agendamento de consulta</CardTitle>
                 </CardHeader>
                 <CardBody>
                   <Table className="tablesorter" responsive>
                     <thead className="text-primary">
                       <tr>
-                        <th>Name</th>
-                        <th>Country</th>
-                        <th>City</th>
-                        <th className="text-center">Salary</th>
+                        <th>Paciente</th>
+                        <th>Endereço</th>
+                        <th>Data</th>
+                        <th className="text-center">Valor</th>
                       </tr>
                     </thead>
                     <tbody>
