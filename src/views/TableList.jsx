@@ -122,7 +122,7 @@ class Tables extends React.Component {
                       <tr>
                         <td>Lauro Milagres</td>
                         <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
-                        <td>Sinaai-Waas</td>
+                        <td>16/10/2019</td>
                         <td className="text-center">R$23,79</td>
                       </tr>
                       <tr>
