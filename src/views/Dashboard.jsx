@@ -73,7 +73,7 @@ class Dashboard extends React.Component {
                   <Row>
                     <Col className="text-left" sm="6">
                       <h5 className="card-category">Analise de desempenho</h5>
-                      <CardTitle tag="h2">Mês X Concultas</CardTitle>
+                      <CardTitle tag="h2">Mês X Consultas</CardTitle>
                     </Col>
                     <Col sm="6">
                       {/*<ButtonGroup
@@ -169,7 +169,7 @@ class Dashboard extends React.Component {
                   <h5 className="card-category">Ganho mensal</h5>
                   <CardTitle tag="h3">
                     <i className="tim-icons icon-bell-55 text-info" />{" "}
-                    763,215
+                    R$763,215
                   </CardTitle>
                 </CardHeader>
                 <CardBody>
@@ -188,13 +188,13 @@ class Dashboard extends React.Component {
                   <h5 className="card-category">Ganho anual</h5>
                   <CardTitle tag="h3">
                     <i className="tim-icons icon-delivery-fast text-primary" />{" "}
-                    3,500€
+                    R$35,500
                   </CardTitle>
                 </CardHeader>
                 <CardBody>
                   <div className="chart-area">
                     <Bar
-                      data={chartExample3.data}
+                      data={chartExample2.data}
                       options={chartExample3.options}
                     />
                   </div>
@@ -206,7 +206,7 @@ class Dashboard extends React.Component {
                 <CardHeader>
                   <h5 className="card-category">Gastos mensal</h5>
                   <CardTitle tag="h3">
-                    <i className="tim-icons icon-send text-success" /> 12,100K
+                    <i className="tim-icons icon-send text-success" /> R$12,100
                   </CardTitle>
                 </CardHeader>
                 <CardBody>
