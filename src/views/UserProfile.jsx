@@ -66,85 +66,10 @@ class UserProfile extends React.Component {
                       </Col>
                       <Col className="pl-md-1" md="4">
                         <FormGroup>
-                          <label htmlFor="exampleInputEmail1">
-                            Email
+                          <label>
+                            RG
                           </label>
-                          <Input placeholder="exemplo@email.com" type="email" />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    {/*<Row>
-                      <Col className="pr-md-1" md="6">
-                        <FormGroup>
-                          <label>Nome completo</label>
-                          <Input
-                            defaultValue="Mike"
-                            placeholder="Company"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="pl-md-1" md="6">
-                        <FormGroup>
-                          <label>Email</label>
-                          <Input
-                            defaultValue="Andrew"
-                            placeholder="Last Name"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>*/}
-                    <Row>
-                      <Col md="12">
-                        <FormGroup>
-                          <label>Endereço</label>
-                          <Input
-                            placeholder="Ex.: R. Dom José Gaspar, 290 - Coração Eucarístico, Belo Horizonte - MG"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="pr-md-1" md="4">
-                        <FormGroup>
-                          <label>Cidade</label>
-                          <Input
-                            placeholder="Ex.: Belo Horizonte"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="px-md-1" md="4">
-                        <FormGroup>
-                          <label>País</label>
-                          <Input
-                            placeholder="Ex.: Brasil"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="pl-md-1" md="4">
-                      <FormGroup>
-                          <label>CEP</label>
-                          <Input
-                            placeholder="Ex.: 30535-901"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md="8">
-                        <FormGroup>
-                          <label>Descrição do Paciente</label>
-                          <Input
-                            cols="80"
-                            placeholder="Ex.: O paciente possui fragilidade ao tomar sorvete"
-                            rows="4"
-                            type="textarea"
-                          />
+                          <Input placeholder="00.000.000-0" type="email" />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -157,47 +82,6 @@ class UserProfile extends React.Component {
                 </CardFooter>
               </Card>
             </Col>
-            {/*<Col md="4">
-              <Card className="card-user">
-                <CardBody>
-                  <CardText />
-                  <div className="author">
-                    <div className="block block-one" />
-                    <div className="block block-two" />
-                    <div className="block block-three" />
-                    <div className="block block-four" />
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="avatar"
-                        src={require("assets/img/emilyz.jpg")}
-                      />
-                      <h5 className="title">Mike Andrew</h5>
-                    </a>
-                    <p className="description">Ceo/Co-Founder</p>
-                  </div>
-                  <div className="card-description">
-                    Do not be scared of the truth because we need to restart the
-                    human foundation in truth And I love you like Kanye loves
-                    Kanye I love Rick Owens’ bed design but the back is...
-                  </div>
-                </CardBody>
-                <CardFooter>
-                  <div className="button-container">
-                    <Button className="btn-icon btn-round" color="facebook">
-                      <i className="fab fa-facebook" />
-                    </Button>
-                    <Button className="btn-icon btn-round" color="twitter">
-                      <i className="fab fa-twitter" />
-                    </Button>
-                    <Button className="btn-icon btn-round" color="google">
-                      <i className="fab fa-google-plus" />
-                    </Button>
-                  </div>
-                </CardFooter>
-              </Card>
-            </Col>
-            */}
           </Row>
         </div>
       </>
