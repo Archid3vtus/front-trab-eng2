@@ -16,7 +16,6 @@
 
 */
 import Dashboard from "views/Dashboard.jsx";
-import Notifications from "views/Notifications.jsx";
 import TableList from "views/TableList.jsx";
 import UserProfile from "views/UserProfile.jsx";
 
@@ -28,7 +27,7 @@ var routes = [
     icon: "tim-icons icon-chart-pie-36",
     component: Dashboard,
     layout: "/admin"
-  },/*
+  } /*
   {
     path: "/notifications",
     name: "Notifications",
@@ -36,7 +35,7 @@ var routes = [
     icon: "tim-icons icon-bell-55",
     component: Notifications,
     layout: "/admin"
-  },*/
+  },*/,
   {
     path: "/user-profile",
     name: "Cadastro de Pacientes",

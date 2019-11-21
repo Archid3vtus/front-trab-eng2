@@ -7,3 +7,11 @@ export const getDentistRevenue = async token => {
     }
   });
 };
+
+export const getClinicRevenue = async token => {
+  return await axios.get("/api/faturamento/clinic", {
+    headers: {
+      Authorization: token
+    }
+  });
+};

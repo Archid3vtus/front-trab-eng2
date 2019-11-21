@@ -17,40 +17,16 @@
 */
 import React from "react";
 // nodejs library that concatenates classes
-import classNames from "classnames";
 // react plugin used to create charts
-import { Line, Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 
 // reactstrap components
-import {
-  Button,
-  ButtonGroup,
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  Label,
-  FormGroup,
-  Input,
-  Table,
-  Row,
-  Col,
-  UncontrolledTooltip
-} from "reactstrap";
+import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
 // core components
-import {
-  chartExample1,
-  chartExample2,
-  chartExample3,
-  chartExample4
-} from "variables/charts.jsx";
+import { chartExample2 } from "variables/charts.jsx";
 
-import {getDentistRevenue} from "../actions/revenue";
+import { getDentistRevenue, getClinicRevenue } from "../actions/revenue";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -62,10 +38,24 @@ class Dashboard extends React.Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     getDentistRevenue(localStorage.getItem("Authorization")).then(res => {
-      this.setState({chart1Data: [0,0,0,0,0,100,200,0,0,0,0,0], chart2Data: [0,0,0,0,0,0,0,0,0,0,0,0]})
-    })
+      let chart = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+      res.data.map(consulta => {
+        chart[consulta.mes] = consulta.valor;
+      });
+
+      this.setState({
+        chart2Data: chart
+      });
+    });
+
+    getClinicRevenue(localStorage.getItem("Authorization")).then(res => {
+      this.setState({
+        chart1Data: res.data
+      });
+    });
   }
 
   setBgChartData = name => {
@@ -84,18 +74,16 @@ class Dashboard extends React.Component {
                   <Row>
                     <Col className="text-left" sm="6">
                       <h5 className="card-category">Analise de desempenho</h5>
-                      <CardTitle tag="h2">Mês X Consultas</CardTitle>
+                      <CardTitle tag="h2">Clínica</CardTitle>
                     </Col>
-                    <Col sm="6">
-                    </Col>
+                    <Col sm="6"></Col>
                   </Row>
                 </CardHeader>
                 <CardBody>
                   <div className="chart-area">
                     <Line
-                      data={(e) => chartExample1[this.state.bigChartData](e, this.state.chart1Data)}
-                      options={chartExample1.options}
-                      onClick={this.test}
+                      data={e => chartExample2.data(e, this.state.chart1Data)}
+                      options={chartExample2.options}
                     />
                   </div>
                 </CardBody>
@@ -107,15 +95,12 @@ class Dashboard extends React.Component {
               <Card className="card-chart">
                 <CardHeader>
                   <h5 className="card-category">Ganho mensal</h5>
-                  <CardTitle tag="h3">
-                    <i className="tim-icons icon-bell-55 text-info" />{" "}
-                    R$763,215
-                  </CardTitle>
+                  <CardTitle tag="h3">Dentista</CardTitle>
                 </CardHeader>
                 <CardBody>
                   <div className="chart-area">
                     <Line
-                      data={(e) => chartExample2.data(e, this.state.chart2Data)}
+                      data={e => chartExample2.data(e, this.state.chart2Data)}
                       options={chartExample2.options}
                     />
                   </div>

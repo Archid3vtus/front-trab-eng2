@@ -75,7 +75,6 @@ let chart1_2_options = {
 // #########################################
 let chartExample1 = {
   data1: (canvas, chartData) => {
-    console.log(chartData);
     let ctx = canvas.getContext("2d");
 
     let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
@@ -217,7 +216,7 @@ let chartExample1 = {
 // // // used inside src/views/Dashboard.jsx
 // #########################################
 let chartExample2 = {
-  data: (canvas,chartData) => {
+  data: (canvas, chartData) => {
     let ctx = canvas.getContext("2d");
 
     let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
@@ -227,7 +226,20 @@ let chartExample2 = {
     gradientStroke.addColorStop(0, "rgba(29,140,248,0)"); //blue colors
 
     return {
-      labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN","JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+      labels: [
+        "JAN",
+        "FEB",
+        "MAR",
+        "APR",
+        "MAY",
+        "JUN",
+        "JUL",
+        "AUG",
+        "SEP",
+        "OCT",
+        "NOV",
+        "DEC"
+      ],
       datasets: [
         {
           label: "Data",
@@ -427,9 +439,4 @@ const chartExample4 = {
   chartExample4 // in src/views/Dashboard.jsx
 };*/
 
-export {
-  chartExample1,
-  chartExample2,
-  chartExample3,
-  chartExample4
-}
+export { chartExample1, chartExample2, chartExample3, chartExample4 };

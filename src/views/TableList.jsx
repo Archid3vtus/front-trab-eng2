@@ -40,8 +40,15 @@ class Tables extends React.Component {
     valor: 0,
     descricao: "",
     dataHora: new Date().toLocaleString(),
-    paciente_id: 0
+    paciente_id: 0,
+    agendamentos: []
   };
+
+  componentDidMount() {
+    getAppointments(localStorage.getItem("Authorization")).then(res => {
+      this.setState({ agendamentos: res.data });
+    });
+  }
 
   onFieldChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -140,7 +147,17 @@ class Tables extends React.Component {
                         <th>data</th>
                       </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                      {this.state.agendamentos.map(agendamento => {
+                        return (
+                          <tr>
+                            <td>{agendamento.Paciente.nome}</td>
+                            <td>{agendamento.descricao}</td>
+                            <td>{agendamento.dataHora}</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
                   </Table>
                 </CardBody>
               </Card>
