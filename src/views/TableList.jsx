@@ -19,7 +19,12 @@ import React from "react";
 
 // reactstrap components
 import {
+  Button,
+  Form,
+  FormGroup,
+  Input,
   Card,
+  CardFooter,
   CardHeader,
   CardBody,
   CardTitle,
@@ -28,12 +33,99 @@ import {
   Col
 } from "reactstrap";
 
+import { getAppointments, registerAppointment } from "../actions/consulta";
+
 class Tables extends React.Component {
+  state = {
+    valor: 0,
+    descricao: "",
+    dataHora: new Date().toLocaleString(),
+    paciente_id: 0
+  };
+
+  onFieldChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  onFormSubmit = event => {
+    registerAppointment(
+      {
+        valor: this.state.valor,
+        descricao: this.state.descricao,
+        dataHora: this.state.dataHora,
+        paciente_id: this.state.paciente_id
+      },
+      localStorage.getItem("Authorization")
+    ).then(res => {
+      console.log(res.data);
+    });
+  };
+
   render() {
     return (
       <>
         <div className="content">
           <Row>
+            <Col md="12">
+              <Card>
+                <CardHeader>Agendamento</CardHeader>
+                <CardBody>
+                  <Form>
+                    <Row>
+                      <Col md="6">
+                        <FormGroup>
+                          <label>Nome Completo</label>
+                          <Input
+                            onChange={this.onFieldChange}
+                            name="paciente_id"
+                            value={this.state.paciente_id}
+                            type="text"
+                          ></Input>
+                        </FormGroup>
+                      </Col>
+                      <Col md="3">
+                        <FormGroup>
+                          <label>valor</label>
+                          <Input
+                            onChange={this.onFieldChange}
+                            name="valor"
+                            value={this.state.valor}
+                            type="text"
+                          ></Input>
+                        </FormGroup>
+                      </Col>
+                      <Col md="3">
+                        <FormGroup>
+                          <label>Dia</label>
+                          <Input
+                            onChange={this.onFieldChange}
+                            name="dataHora"
+                            value={this.state.dataHora}
+                            type="date"
+                          ></Input>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col md="12">
+                        <FormGroup>
+                          <label>Descrição</label>
+                          <Input
+                            onChange={this.onFieldChange}
+                            name="descricao"
+                            value={this.state.descricao}
+                            type="text"
+                          ></Input>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </Form>
+                </CardBody>
+                <CardFooter>
+                  <Button onClick={this.onFormSubmit}>Agendar</Button>
+                </CardFooter>
+              </Card>
+            </Col>
             <Col md="12">
               <Card>
                 <CardHeader>
@@ -44,118 +136,11 @@ class Tables extends React.Component {
                     <thead className="text-primary">
                       <tr>
                         <th>Paciente</th>
-                        <th>Endereço</th>
-                        <th style={{width:'10%'}}>data</th>
-                        <th className="text-center">Valor</th>
+                        <th>Descrição</th>
+                        <th>data</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>Lauro Milagres</td>
-                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
-                        <td>16/10/2019</td>
-                        <td className="text-center">R$36,78</td>
-                      </tr>
-                      <tr>
-                        <td>Gustavo Kotarsky</td>
-                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
-                        <td>16/10/2019</td>
-                        <td className="text-center">R$23,89</td>
-                      </tr>
-                      <tr>
-                        <td>Yuri Cancela</td>
-                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
-                        <td>16/10/2019</td>
-                        <td className="text-center">R$56,42</td>
-                      </tr>
-                      <tr>
-                        <td>Bernardo Victor</td>
-                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
-                        <td>16/10/2019</td>
-                        <td className="text-center">R$38,75</td>
-                      </tr>
-                      {/*<tr>
-                        <td>Doris Greene</td>
-                        <td>Malawi</td>
-                        <td>Feldkirchen in Kärnten</td>
-                        <td className="text-center">$63,542</td>
-                      </tr>
-                      <tr>
-                        <td>Mason Porter</td>
-                        <td>Chile</td>
-                        <td>Gloucester</td>
-                        <td className="text-center">$78,615</td>
-                      </tr>*/}
-                      <tr>
-                        <td>Daniel</td>
-                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
-                        <td>16/10/2019</td>
-                        <td className="text-center">R$98,65</td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col md="12">
-              <Card className="card-plain">
-                <CardHeader>
-                  <CardTitle tag="h4">Agendamento de consulta</CardTitle>
-                </CardHeader>
-                <CardBody>
-                  <Table className="tablesorter" responsive>
-                    <thead className="text-primary">
-                      <tr>
-                        <th>Paciente</th>
-                        <th>Endereço</th>
-                        <th style={{width:'10%'}}>Data</th>
-                        <th className="text-center">Valor</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Yuri Cancela</td>
-                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
-                        <td>16/10/2019</td>
-                        <td className="text-center">R$36,73</td>
-                      </tr>
-                      <tr>
-                        <td>Lauro Milagres</td>
-                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
-                        <td>16/10/2019</td>
-                        <td className="text-center">R$23,79</td>
-                      </tr>
-                      <tr>
-                        <td>Bernardo Victor</td>
-                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
-                        <td>16/10/2019</td>
-                        <td className="text-center">R$56,42</td>
-                      </tr>
-                      <tr>
-                        <td>Gustavo Kotarsky</td>
-                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
-                        <td>16/10/2019</td>
-                        <td className="text-center">R$38,35</td>
-                      </tr>
-                      {/*<tr>
-                        <td>Doris Greene</td>
-                        <td>Malawi</td>
-                        <td>Feldkirchen in Kärnten</td>
-                        <td className="text-center">$63,542</td>
-                      </tr>
-                      <tr>
-                        <td>Mason Porter</td>
-                        <td>Chile</td>
-                        <td>Gloucester</td>
-                        <td className="text-center">$78,615</td>
-                      </tr>*/}
-                      <tr>
-                        <td>Daniel Professor</td>
-                        <td>Prédio 34, R. Dom José Gaspar, 500 - Coração Eucarístico</td>
-                        <td>16/10/2019</td>
-                        <td className="text-center">R$98,60</td>
-                      </tr>
-                    </tbody>
+                    <tbody></tbody>
                   </Table>
                 </CardBody>
               </Card>
